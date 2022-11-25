@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">games</string>
+    <string name="login">Login</string>
+    <string name="welcome">Welcome!</string>
+    <string name="login_text">With our app it will be much easier and more fun to keep track of your games!</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember-me</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="copyright">Developed by DS2M</string>
+    <string name="new_account">New Account</string>
+    <string name="photo_choose">Shall we choose a photo?</string>
+    <string name="authentication_data">Data for authentication</string>
+    <string name="personal_data">Personal Data</string>
+    <string name="username">What\'s your name?</string>
+    <string name="usercity">What\'s your city?</string>
+    <string name="userbirth">What\'s your date of birth?</string>
+    <string name="gamer_level">What\'s your gamer level?</string>
+    <string name="favorite_console">What\'s your favorite console?</string>
+    <string name="user_gender">What\'s your gender?</string>
+    <string name="fem">Feminine</string>
+    <string name="masc">Masculine</string>
+    <string name="games_finished">Games Finished</string>
+    <string name="playing">Currently Playing</string>
+    <string name="age">Age</string>
+    <string name="registered_games">Your registered games</string>
+
+    <string-array name="consoles">
+        <item>Playstation</item>
+        <item>Old Nintendo (NES - GameCube)</item>
+        <item>New Nintendo (Wii - Switch)</item>
+        <item>Sega</item>
+        <item>Xbox</item>
+        <item>PC</item>
+    </string-array>
+
+    <string name="casual">Casual</string>
+    <string name="beginner">Beginner</string>
+    <string name="basic">Basic</string>
+    <string name="advanced">Advanced</string>
+
+    <string name="login_failed">Username or Password Incorrect</string>
+    <string name="field_required">This field is required</string>
+
+</resources>
