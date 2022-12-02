@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu_save"
+        android:icon="@drawable/ic_baseline_save_24"
+        android:iconTint="@color/white"
+        android:iconTintMode="src_atop"
         android:title="Save"
-        app:showAsAction="always"
-        android:icon="@drawable/ic_baseline_save_24"/>
+        app:showAsAction="always" />
 </menu>

@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.RadioButton
-import android.widget.Toast
 import br.senai.sp.jandira.games.R
 import br.senai.sp.jandira.games.databinding.ActivitySignupBinding
 import br.senai.sp.jandira.games.model.Nivel
@@ -30,8 +29,9 @@ class SignupActivity : AppCompatActivity() {
         level = gamerLevel[0]
 
         binding.gamerLevelText.text = level
+//        consoleRepo = ConsoleRepository(this)
         user = User()
-        
+
         binding.gamerlevelSlider.addOnChangeListener { _, value, _ ->
             level = gamerLevel[value.toInt() - 1]
             binding.gamerLevelText.text = level
@@ -58,13 +58,13 @@ class SignupActivity : AppCompatActivity() {
             }
         }
     }
-
     private fun save() {
         if (validar()) {
             user.email = binding.editEmail.text.toString()
             user.senha = binding.editPassword.text.toString()
             user.nome = binding.editName.text.toString()
             user.cidade = binding.editCity.text.toString()
+            user.dataNascimento = binding.editBirth.text.toString()
 
             var id = binding.radioGender.checkedRadioButtonId
             user.gender = this.findViewById<RadioButton>(id).text.first()
@@ -80,21 +80,26 @@ class SignupActivity : AppCompatActivity() {
 
     private fun validar(): Boolean {
         if (binding.editEmail.text.isEmpty()) {
-            binding.editEmail.error = "${this.getString(R.string.field_required)}"
+            binding.editEmail.error = this.getString(R.string.field_required)
             return false
         }
         else if(binding.editPassword.text.isEmpty()) {
-            binding.editPassword.error = "${this.getString(R.string.field_required)}"
+            binding.editPassword.error = this.getString(R.string.field_required)
             return false
         }
         else if(binding.editName.text.isEmpty()) {
-            binding.editName.error = "${this.getString(R.string.field_required)}"
+            binding.editName.error = this.getString(R.string.field_required)
             return false
         }
         else if(binding.editCity.text.isEmpty()) {
-            binding.editCity.error = "${this.getString(R.string.field_required)}"
+            binding.editCity.error = this.getString(R.string.field_required)
+            return false
+        }
+        if ("/" !in binding.editBirth.text || binding.editBirth.text.length != 10) {
+            binding.editBirth.error = this.getString(R.string.wrong_format)
             return false
         }
         else return true
+
     }
 }

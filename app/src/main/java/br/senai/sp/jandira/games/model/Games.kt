@@ -1,6 +1,7 @@
 package br.senai.sp.jandira.games.model
 
 import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -13,7 +14,7 @@ class Games {
     var desenvolvedora = ""
     var nome = ""
     var descricao = ""
-//    var imagem: Bitmap? = null
+    var imagem: Drawable? = null
     var finalizado = false
 
 }

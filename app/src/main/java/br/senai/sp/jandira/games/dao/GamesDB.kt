@@ -4,11 +4,9 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import br.senai.sp.jandira.games.model.Console
-import br.senai.sp.jandira.games.model.Games
 import br.senai.sp.jandira.games.model.User
 
-@Database(entities = [User::class, Console::class, Games::class], version = 1)
+@Database(entities = [User::class], version = 1)
 abstract class GamesDB: RoomDatabase() {
 
     abstract fun userDao(): UserDao

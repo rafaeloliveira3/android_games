@@ -1,10 +1,8 @@
 package br.senai.sp.jandira.games.model
 
-import android.graphics.Bitmap
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.time.LocalDate
 
 @Entity(tableName = "tbl_user")
 class User {
@@ -18,8 +16,8 @@ class User {
     var cidade = ""
     var gender = 'I'
 
-//    @ColumnInfo(name = "data-nascimento")
-//    var dataNascimento: LocalDate? = null
+    @ColumnInfo(name = "data-nascimento")
+    var dataNascimento: String? = null
 
     var nivel = Nivel.INICIANTE
 //    var console: Console? = null

@@ -10,8 +10,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.senai.sp.jandira.games.R
 import br.senai.sp.jandira.games.adapter.GamesAdapter
+import br.senai.sp.jandira.games.dao.GamesDao
 import br.senai.sp.jandira.games.databinding.ActivityGamesBinding
 import br.senai.sp.jandira.games.repository.UserRepository
+import java.time.Year
 
 class GamesActivity : AppCompatActivity() {
 
@@ -35,12 +37,16 @@ class GamesActivity : AppCompatActivity() {
 
         rvGames.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         adapterGames = GamesAdapter(this)
+        adapterGames.updateGamesList(GamesDao.getGames(this))
 
         rvGames.adapter = adapterGames
+
+        val age = Year.now().value - ((user.dataNascimento?.substring(user.dataNascimento.toString().length - 4))?.toInt()?: Year.now().value)
 
         binding.userName.text = user.nome
         binding.userEmail.text = user.email
         binding.gamerLevel.text = user.nivel.toString()
+        binding.userAge.text = age.toString()
 
     }
 

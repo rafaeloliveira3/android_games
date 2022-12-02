@@ -6,13 +6,13 @@ import android.os.Bundle
 import android.widget.Toast
 import br.senai.sp.jandira.games.R
 import br.senai.sp.jandira.games.databinding.ActivityMainBinding
-import br.senai.sp.jandira.games.model.User
 import br.senai.sp.jandira.games.repository.UserRepository
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var userRepo: UserRepository
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,8 +31,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(abrirGamesActivity)
         }
 
-
-
         binding.textSignup.setOnClickListener {
             val abrirSignupActivity = Intent(this, SignupActivity::class.java)
             startActivity(abrirSignupActivity)
@@ -41,8 +39,8 @@ class MainActivity : AppCompatActivity() {
         binding.loginButton.setOnClickListener {
             if (validar()) {
                 var token = false
-                var email = binding.loginEmail.text.toString()
-                var password = binding.loginPassword.text.toString()
+                val email = binding.loginEmail.text.toString()
+                val password = binding.loginPassword.text.toString()
                 var id = 0
                 val editor = data.edit()
 
@@ -62,9 +60,12 @@ class MainActivity : AppCompatActivity() {
                     val abrirGamesActivity = Intent(this, GamesActivity::class.java)
                     abrirGamesActivity.putExtra("id", id)
                     startActivity(abrirGamesActivity)
-                }
-                else {
-                    Toast.makeText(this, "${this.getString(R.string.login_failed)}", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(
+                        this,
+                        this.getString(R.string.login_failed),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         }
@@ -72,11 +73,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun validar(): Boolean {
         if (binding.loginEmail.text.isEmpty()) {
-            binding.loginEmail.error = "${this.getString(R.string.field_required)}"
+            binding.loginEmail.error = this.getString(R.string.field_required)
             return false
         }
         else if(binding.loginPassword.text.isEmpty()) {
-            binding.loginPassword.error = "${this.getString(R.string.field_required)}"
+            binding.loginPassword.error = this.getString(R.string.field_required)
             return false
         }
         else return true

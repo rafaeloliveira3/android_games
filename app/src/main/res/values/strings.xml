@@ -14,7 +14,7 @@
     <string name="personal_data">Personal Data</string>
     <string name="username">What\'s your name?</string>
     <string name="usercity">What\'s your city?</string>
-    <string name="userbirth">What\'s your date of birth?</string>
+    <string name="userbirth">What\'s your date of birth? DD/MM/YYYY</string>
     <string name="gamer_level">What\'s your gamer level?</string>
     <string name="favorite_console">What\'s your favorite console?</string>
     <string name="user_gender">What\'s your gender?</string>
@@ -41,5 +41,6 @@
 
     <string name="login_failed">Username or Password Incorrect</string>
     <string name="field_required">This field is required</string>
+    <string name="wrong_format">Please insert your birth like this DD/MM/YYYY</string>
 
 </resources>

@@ -30,6 +30,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.5" />
         <entry key="app/src/main/res/layout/holder_layout.xml" value="0.575" />
+        <entry key="app/src/main/res/layout/spinner_item.xml" value="0.575" />
         <entry key="app/src/main/res/menu/menu_games.xml" value="0.5" />
         <entry key="app/src/main/res/menu/menu_signup.xml" value="0.5901041666666667" />
       </map>
